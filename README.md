@@ -7,7 +7,7 @@ Add it as a maven dependency or just [download the latest release](https://githu
 <dependency>
   <groupId>com.konloch</groupId>
   <artifactId>TaskManager</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 

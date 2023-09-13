@@ -3,7 +3,7 @@
 	
 	<groupId>com.konloch</groupId>
 	<artifactId>TaskManager</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<name>TaskManager</name>
 	<description>TaskManager is an easy to use zero dependency task manager / task queue.</description>
