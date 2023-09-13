@@ -1,7 +1,12 @@
 # TaskManager
 TaskManager is an easy to use zero dependency task manager / task queue.
 
-## How To Add As Library
+FIFO, by design it queues tasks onto a single thread.
+
+## 💡 Requirements
++ Java Runtime 1.8 **or higher**
+
+## ⚙️ How To Add As Library
 Add it as a maven dependency or just [download the latest release](https://github.com/Konloch/TaskManager/releases).
 ```xml
 <dependency>
@@ -11,8 +16,13 @@ Add it as a maven dependency or just [download the latest release](https://githu
 </dependency>
 ```
 
-## How To Use
-For a more in-depth example of how to use the TaskManager, [view the test file](https://github.com/Konloch/TaskManager/blob/main/src/test/java/com/konloch/TestTaskManager.java#L26).
+## 📚 Links
+* [Website](https://konloch.com/TaskManager/)
+* [Discord Server](https://discord.gg/aexsYpfMEf)
+* [Download Releases](https://konloch.com/TaskManager/releases)
+
+## 💻 How To Use
+For a more in-depth example of how to use the TaskManager, [view this test file](https://github.com/Konloch/TaskManager/blob/main/src/test/java/com/konloch/TestTaskManager.java#L26).
 ```java
 //create and start a new task manager
 TaskManager manager = new TaskManager();
