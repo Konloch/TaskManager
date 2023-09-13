@@ -39,11 +39,11 @@ public class Task
 			switch (type)
 			{
 				case UNTIL_STOP:
-					handleRun();
+					safelyRun();
 					break;
 				
 				case COUNTED_LOOP:
-					handleRun();
+					safelyRun();
 					if(counter++ + 1 >= counterMax)
 						stop();
 					break;
@@ -56,7 +56,7 @@ public class Task
 						if(isDelay)
 							stop();
 						
-						handleRun();
+						safelyRun();
 						
 						//requeue the conditional so it can be set later
 						if(isDelayUntilStop)
@@ -74,7 +74,7 @@ public class Task
 		return !signalStop;
 	}
 	
-	private void handleRun()
+	public void safelyRun()
 	{
 		try
 		{
@@ -101,7 +101,7 @@ public class Task
 	 * Sets the task type
 	 * @param type any Task type
 	 */
-	void setType(TaskType type)
+	public void setType(TaskType type)
 	{
 		this.type = type;
 	}
@@ -111,7 +111,7 @@ public class Task
 	 *
 	 * @param conditionMet the condition met implementation
 	 */
-	void setConditionMet(ConditionMet conditionMet)
+	public void setConditionMet(ConditionMet conditionMet)
 	{
 		this.conditionMet = conditionMet;
 	}
@@ -121,7 +121,7 @@ public class Task
 	 *
 	 * @param counterMax any integer as the counter max
 	 */
-	void setCounterMax(int counterMax)
+	public void setCounterMax(int counterMax)
 	{
 		this.counterMax = counterMax;
 	}
@@ -131,7 +131,7 @@ public class Task
 	 *
 	 * @param repeatingDelay any long as the value of the repeating delay in milliseconds
 	 */
-	void setRepeatingDelay(long repeatingDelay)
+	public void setRepeatingDelay(long repeatingDelay)
 	{
 		this.repeatingDelay = repeatingDelay;
 	}
@@ -141,7 +141,7 @@ public class Task
 	 *
 	 * @return the value of the signalStop flag
 	 */
-	boolean isSignalStop()
+	public boolean isSignalStop()
 	{
 		return signalStop;
 	}
@@ -151,7 +151,7 @@ public class Task
 	 *
 	 * @return any long as the repeating delay in milliseconds
 	 */
-	long getRepeatingDelay()
+	public long getRepeatingDelay()
 	{
 		return repeatingDelay;
 	}
