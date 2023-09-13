@@ -39,11 +39,11 @@ public class Task
 			switch (type)
 			{
 				case UNTIL_STOP:
-					runnable.run(this);
+					handleRun();
 					break;
 				
 				case COUNTED_LOOP:
-					runnable.run(this);
+					handleRun();
 					if(counter++ + 1 >= counterMax)
 						stop();
 					break;
@@ -56,7 +56,7 @@ public class Task
 						if(isDelay)
 							stop();
 						
-						runnable.run(this);
+						handleRun();
 						
 						//requeue the conditional so it can be set later
 						if(isDelayUntilStop)
@@ -72,6 +72,21 @@ public class Task
 		}
 		
 		return !signalStop;
+	}
+	
+	private void handleRun()
+	{
+		try
+		{
+			runnable.run(this);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			
+			//stop on any errors
+			stop();
+		}
 	}
 	
 	/**

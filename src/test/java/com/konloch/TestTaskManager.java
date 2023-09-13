@@ -29,6 +29,12 @@ public class TestTaskManager
 		System.out.println("Testing the Task Manager, please wait...");
 		System.out.println();
 		
+		//test error handling
+		manager.doOnce((task)->
+		{
+			throw new RuntimeException("Test Handling Errors");
+		});
+		
 		long testDelays = System.currentTimeMillis();
 		
 		//verify delays run only once
